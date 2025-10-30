@@ -219,7 +219,6 @@ void loop() {
     }
 
     // ★★★ 核心修正：確保冰箱主邏輯在 BLE 重置期間也能繼續運行 ★★★
-    // 智慧 Modbus 輪詢邏輯
     if (g_bleResetState == BLE_STATE_IDLE) { // 只有在 BLE 非重置狀態下才輪詢 Modbus
         if (!modbusOk) {
             if (currentMillis - modbusRetryTimer > 10000) {
